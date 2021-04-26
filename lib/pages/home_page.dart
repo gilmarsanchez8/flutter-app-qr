@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_qr/pages/history_maps_page.dart';
+import 'package:flutter_app_qr/providers/db_provider.dart';
 import 'package:flutter_app_qr/providers/ui_provider.dart';
 import 'package:flutter_app_qr/widgets/custom_navigator_bar.dart';
 import 'package:flutter_app_qr/widgets/scan_buttom.dart';
@@ -33,6 +34,12 @@ class _HomePageBody extends StatelessWidget {
     final uiProvider = Provider.of<UIProvider>(context);
     //Mostrar página respectiva
     final currentIndex = uiProvider.selectedMenuOpt;
+
+    DBProvider.db.database;
+
+    // final tempScan = new ScanModel(valor: 'http://google.com');
+    // DBProvider.db.nuevoScanRaw(tempScan);
+
     switch (currentIndex) {
       case 0:
         return HistoryMapasPage();
