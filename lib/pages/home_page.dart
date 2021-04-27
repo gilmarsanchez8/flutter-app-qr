@@ -35,11 +35,15 @@ class _HomePageBody extends StatelessWidget {
     //Mostrar página respectiva
     final currentIndex = uiProvider.selectedMenuOpt;
 
-    DBProvider.db.database;
-
+    //Crear bd
+    //DBProvider.db.database;
+    //Insertar valores en bd
     // final tempScan = new ScanModel(valor: 'http://google.com');
     // DBProvider.db.nuevoScanRaw(tempScan);
 
+    //Obtener valores de bd
+    //DBProvider.db.getScanById(1).then((scan) => print(scan.id));
+    //DBProvider.db.getAllScans().then(print);
     switch (currentIndex) {
       case 0:
         return HistoryMapasPage();
