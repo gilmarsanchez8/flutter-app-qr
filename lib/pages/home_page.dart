@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_qr/pages/history_maps_page.dart';
 import 'package:flutter_app_qr/providers/db_provider.dart';
+import 'package:flutter_app_qr/providers/scan_list_provider.dart';
 import 'package:flutter_app_qr/providers/ui_provider.dart';
 import 'package:flutter_app_qr/widgets/custom_navigator_bar.dart';
 import 'package:flutter_app_qr/widgets/scan_buttom.dart';
@@ -44,13 +45,18 @@ class _HomePageBody extends StatelessWidget {
     //Obtener valores de bd
     //DBProvider.db.getScanById(1).then((scan) => print(scan.id));
     //DBProvider.db.getAllScans().then(print);
+    //
+    //Usar el ScanListProvider
+    final scanListProvider =
+        Provider.of<ScanListProvider>(context, listen: false);
+
     switch (currentIndex) {
       case 0:
+        scanListProvider.cargarScanPorTipo('geo');
         return HistoryMapasPage();
-        break;
       case 1:
+        scanListProvider.cargarScanPorTipo('http');
         return DirectionsPage();
-        break;
       default:
         return HistoryMapasPage();
     }
