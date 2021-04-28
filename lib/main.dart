@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_qr/pages/home_page.dart';
 import 'package:flutter_app_qr/pages/maps_page.dart';
+import 'package:flutter_app_qr/providers/scan_list_provider.dart';
 import 'package:flutter_app_qr/providers/ui_provider.dart';
 import 'package:provider/provider.dart';
  
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (_) => new UIProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => new ScanListProvider(),
         )
       ],
       child: MaterialApp(
